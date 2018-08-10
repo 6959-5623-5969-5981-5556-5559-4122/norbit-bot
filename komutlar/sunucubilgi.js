@@ -14,7 +14,7 @@ message.delete();
       const sunucubilgi = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setTimestamp()
-    .setFooter('İMPARATOR | fb.com/turkoglu1655', bot.user.avatarURL)
+    .setFooter('Norbit | fb.com/turkoglu1655', bot.user.avatarURL)
     .setAuthor(message.guild.name, message.guild.iconURL)
     .addField('Ad:', message.guild.name)
     .addField('ID', message.guild.id)
