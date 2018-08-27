@@ -13,7 +13,8 @@ exports.run = (client, message) => {
     .setColor(0x00AE86)
     .setTimestamp()
     .setAuthor(message.author.username, message.author.avatarURL)
-    .setDescription('Link: https://discordapp.com/api/oauth2/authorize?client_id=459335363048112128&permissions=8&redirect_uri=https%3A%2F%2Fdiscordapi.com%2Fpermissions.html%23805314622&scope=bothttps://discordapp.com/api/oauth2/authorize?client_id=459335363048112128&permissions=8&redirect_uri=https%3A%2F%2Fdiscordapi.com%2Fpermissions.html%23805314622&scope=bot');
+    .addField("**❯ Bot sunucusu**", " [Botu Davet Etmek İçin Tıklayın](https://discordbots.org/bot/459335363048112128) ", )
+    .addField("**❯ Destek sunucusu**", " [Sunucumuza Girmek İçin Tıklayın](https://discord.gg/rxeUzcX) ", )
     return message.author.sendEmbed(pingozel)
 };
 
