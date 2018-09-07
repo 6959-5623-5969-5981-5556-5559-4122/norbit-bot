@@ -17,6 +17,6 @@ exports.help = {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['h', 'halp', 'help', 'y'],
+  aliases: ['clear', 'fısfıs', 'temiz', 't'],
   permLevel: 0
 };

@@ -22,7 +22,10 @@ Botumu sunucunuza ekleyin:
 
 **BAKIMDA**
 
-Kanal Uzun link:
+Gerçek Kanal Uzun link:
+**https://www.youtube.com/MehmetWinners**
+
+Yan Kanal Uzun link:
 **https://www.youtube.com/channel/UCTGPW8VjlVlGTIHmAi8zhbg?view_as=subscriber**
 
 Kanal Kısa Link:

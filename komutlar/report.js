@@ -40,6 +40,6 @@ exports.conf = {
 
 exports.help = {
   name: 'report',
-  description: 'Uygunsuz Oyuncuları Bildirin!!',
+  description: 'Şerefsiz Oyuncuları Bildirin!!',
   usage: 'report'
 };
