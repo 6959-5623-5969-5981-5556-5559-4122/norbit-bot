@@ -1,8 +1,14 @@
-const Discord = require('discord.js');
+﻿const Discord = require('discord.js');
 const client = new Discord.Client();
 const ayarlar = require('./ayarlar.json');
 const chalk = require('chalk');
 const fs = require('fs');
+const bot = new Discord.Client();
+const express = require('express');
+const app = express();
+const http = require('http');
+let coins = require("./coins.json");
+let xp = require("./xp.json");
 const moment = require('moment');
 require('./util/eventLoader')(client);
 
@@ -89,16 +95,6 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.content.toLowerCase() === "selamun aleyküm") {
-		if (!msg.guild.member(msg.author).hasPermission("BAN_MEMBERS")) {
-			msg.author.sendMessage("Aleyküm Selam Hoşgeldin Reyizz");
-		} else {
-		msg.reply("Aleyküm Selam Hoşgeldin Reyizz");
-		}
-	}
-});
-
-client.on('message', msg => {
   if (msg.content.toLowerCase() === "bb") {
 		if (!msg.guild.member(msg.author).hasPermission("BAN_MEMBERS")) {
 			msg.author.sendMessage("Görüşmek Üzere Adamsınn");
@@ -135,6 +131,7 @@ client.on('message', msg => {
 			msg.author.sendMessage("Aleyküm selam,  hoş geldin");
 		} else {
 		msg.reply("Aleyküm selam, hoş geldin");
+    msg.react(":regional_indicator_a: :regional_indicator_s:")
 		}
 	}
 });
@@ -217,6 +214,18 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
+  if (msg.content === prefix + 'mta') {
+    if (msg.guild.member(msg.author).hasPermission("BAN_MEMBERS")) {
+      msg.member.addRole("478477287084523521")
+			msg.author.sendMessage("**Rolün Başarıyla Eklendi :white_check_mark: **");
+		} else {
+		msg.reply("**Rolün Eklenemedi :x: **");
+		}
+	}
+});
+
+
+client.on('message', msg => {
   if (msg.content === prefix + 'suşi') {
 		if (!msg.guild.member(msg.author).hasPermission("BAN_MEMBERS")) {
 			msg.author.sendMessage("**Suşiyi En çok Japonlar Sever Tamam mı Bunu Aklında Tut!!**");
@@ -226,7 +235,6 @@ client.on('message', msg => {
 		}
 	}
 });
-
 client.elevation = message => {
   if(!message.guild) {
 	return; }
@@ -247,4 +255,4 @@ client.on('error', e => {
   console.log(chalk.bgRed(e.replace(regToken, 'that was redacted')));
 });
 
-client.login(ayarlar.token);
+client.login(ayarlar.token)

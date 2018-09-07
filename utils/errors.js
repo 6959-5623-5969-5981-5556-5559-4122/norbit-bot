@@ -5,9 +5,9 @@ let config = require("../ayarlar.json");
 module.exports.noPerms = (message, perm) => {
     let embed = new Discord.RichEmbed()
         .setAuthor(message.author.username)
-        .setTitle("Insufficient Permission")
+        .setTitle("Yetkin Yetmiyor Dostum!")
         .setColor(config.red)
-        .addField("Permission needed", perm);
+        .addField("Aklından Bile Geçirme Bence!", perm);
 
     message.channel.send(embed).then(m => m.delete(5000));
 }
@@ -33,22 +33,13 @@ module.exports.botuser = (message) => {
     message.channel.send(embed).then(m => m.delete(5000));
 }
 
-module.exports.nosuggestion = (channel) => {
-    let embed = new Discord.RichEmbed()
-        .setTitle("HATA")
-        .setDescription("Lütfen Bir Öneri Yazınız.")
-        .setColor(config.red);
-
-    channel.send(embed).then(m);
-}
-
 module.exports.cantfindUser = (channel) => {
     let embed = new Discord.RichEmbed()
         .setTitle("HATA")
-        .setDescription("BİR KULLANICI VE BİR SEBEP SEÇİN BU BİR DAVA!")
+        .setDescription("Kullanıcı Ve Sebep Seçmelisin")
         .setColor(config.red);
 
-    channel.send(embed).then(m);
+    channel.send(embed).then(m => m.delete(5000));
 }
 
 module.exports.noReason = (channel) => {
