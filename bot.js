@@ -1,4 +1,4 @@
-﻿const Discord = require('discord.js');
+const Discord = require('discord.js');
 const client = new Discord.Client();
 const ayarlar = require('./ayarlar.json');
 const chalk = require('chalk');
@@ -110,6 +110,9 @@ client.on('message', msg => {
 			msg.author.sendMessage("Kim geldi Hoşgeldi :)");
 		} else {
 		msg.reply("Kim geldi Hoşgeldi :)");
+    msg.react("🇭")
+
+    msg.react("🇬")
 		}
 	}
 });
@@ -128,11 +131,16 @@ client.on('message', msg => {
 client.on('message', msg => {
   if (msg.content.toLowerCase() === 'sa') {
 		if (!msg.guild.member(msg.author).hasPermission("BAN_MEMBERS")) {
+      msg.react("🇦")
+
+      msg.react("🇸")
 			msg.author.sendMessage("Aleyküm selam,  hoş geldin");
 		} else {
 		msg.reply("Aleyküm selam, hoş geldin");
-    msg.react(":regional_indicator_a: :regional_indicator_s:")
-		}
+    msg.react("🇦")
+
+    msg.react("🇸")
+    }
 	}
 });
 
@@ -217,6 +225,7 @@ client.on('message', msg => {
   if (msg.content === prefix + 'mta') {
     if (msg.guild.member(msg.author).hasPermission("BAN_MEMBERS")) {
       msg.member.addRole("478477287084523521")
+
 			msg.author.sendMessage("**Rolün Başarıyla Eklendi :white_check_mark: **");
 		} else {
 		msg.reply("**Rolün Eklenemedi :x: **");
@@ -255,4 +264,4 @@ client.on('error', e => {
   console.log(chalk.bgRed(e.replace(regToken, 'that was redacted')));
 });
 
-client.login(ayarlar.token)
+client.login(process.env.BOT_TOKEN)
